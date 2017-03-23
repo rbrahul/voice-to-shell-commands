@@ -4,6 +4,7 @@ An application to execute command from your voice. Let's build a project then si
 Clone this repository then from it's root directory run following command to start.
 
 ```
+npm install
 npm start
 ```
 If this app want's media access permission for microphone then please allow to beacause it want's to listen your voice. You are done.
