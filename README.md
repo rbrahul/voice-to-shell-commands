@@ -12,4 +12,7 @@ Now Create a new command and it's pharse to be pronounced. For example if you wa
 
 Now you have the power to command your browser to do something for you :D Best of luck.
 
+![Speach recogniton for shell command](https://raw.githubusercontent.com/rbrahul/voice-to-shell-commands/master/public/application-interface.png "Talk to your terminal")
+
+
 ** Developed with ♥ using ExpressJS, Vuejs, Materializecss**
