@@ -7,6 +7,7 @@ Clone this repository then from it's root directory run following command to sta
 npm install
 npm start
 ```
+Now visit: [http://localhost:3000/](http://localhost:3000/)
 If this app want's media access permission for microphone then please allow to beacause it want's to listen your voice. You are done.
 
 Now Create a new command and it's pharse to be pronounced. For example if you want to create a file called **test.txt** only Speaking to your browser **file** then just enter these fields and click **Add Command** button.
