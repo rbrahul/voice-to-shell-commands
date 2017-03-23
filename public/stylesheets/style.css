@@ -6,3 +6,32 @@ body {
 a {
   color: #00B7FF;
 }
+body{
+  overflow:hidden;
+}
+.left-segment {
+   background: #e8eaf6 ; 
+    height:100vh
+}
+
+.right-segment{
+   height: calc(100vh - 70px);
+    overflow-y: auto;
+}
+.card .card-action {
+    padding: 10px 16px;
+}
+.card .card-content .card-title {
+    line-height: 26px;
+    font-size:20px;
+}
+.card-content code {
+  padding:10px;
+    width:100%;
+    display:block;
+    background: #9fa8da;
+}
+.container {
+  height: 100vh;
+  background: #fefefe;
+}

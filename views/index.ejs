@@ -1,11 +1,123 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <title>Command manager</title>
+     
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../stylesheets/style.css">
+   <script src="https://vuejs.org/js/vue.js"></script>
+</head>
+<body>
+<div class="container">
+<nav>
+    <div class="nav-wrapper purple darken-1">
+      <a href="#" class="brand-logo" style="font-size:20px;margin-left:20px">Voice Commander</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="sass.html">Help</a></li>
+      </ul>
+    </div>
+  </nav>
+    
+  <div class="row" id="app">
+
+<div class="col s6 left-segment inndigo lighten-4">
+    <div class="row">
+      <div class="col s12">
+        <h5 style="color:#5c6bc0  ; line-height:32px;margin-top:15px">Add new command</h5>
+      </div>
+    </div>
+          <div class="row" >
+                <form class="col s12">
+
+                  <div class="row">
+                        <div class="input-field col s12">
+                          <i class="material-icons prefix">account_circle</i>
+                          <input id="icon_prefix" type="text" class="validate" v-model="formData.name"/>
+                          <label for="icon_prefix">Voice Command</label>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="input-field col s12">
+                          <i class="material-icons prefix">account_circle</i>
+                          <input id="icon_prefix" type="text" class="validate" v-model="formData.shellCommand">
+                          <label for="icon_prefix">Shell Command</label>
+                        </div>
+                    </div>
+            <div class="row">
+              <div class="col s12">
+                <button type="button" @click="saveCommand" class="waves-effect waves-light btn-large" v-if="selectedEditableItem == null" ><i class="material-icons left" >note_add </i>Add Command</button>
+                        <button type="button" @click="updateCommand" class="waves-effect waves-light btn-large" v-if="selectedEditableItem != null"><i class="material-icons left" >note_add </i>Update Command</button>
+            <button class="waves-effect waves-light btn-large"><i class="material-icons right">replay</i>Reset</button>
+                  
+              </div>
+            </div>
+                </form>
+          </div>
+ </div>
+      
+      
+      <div class="col s6 right-segment">
+     
+          <div class="row" v-for="(command, index) in commands">
+        <div class="col s12 sm12">
+          <div class="card indigo lighten-2 ">
+            <div class="card-content white-text">
+              <span class="card-title">{{ command.name }}</span>
+              <p><code>
+               {{ command.shellCommand }}
+              </code></p>
+            </div>
+            <div class="card-action ">
+              <a href="#" title="edit" class="white-text">  <i class="material-icons prefix" @click.stop.prevent="editCommand(index)">mode_edit </i></a>
+              <a href="#" title="delete"  class="white-text"> <i class="material-icons prefix" @click.stop.prevent="deleteCommand(index)">delete</i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+          
+          
+      </div>
+
+    </div>
+</div>
+  
+<script>
+
+</script>
+          <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
+ <script src="../js/annyang.js"></script>
+    <script>
+        $(document).ready(function() {
+    Materialize.updateTextFields();
+  });
+/*
+var coms = {
+  "hello": function(){
+    alert("hei");
+  }
+}
+
+if(annyang){
+    annyang.init(coms,true);
+    annyang.addCallback('error', function() {
+    $('.myErrorText').text('There was an error!');
+  });
+annyang.debug(true);  
+annyang.addCallback('resultMatch', function(userSaid, commandText, phrases) {
+  console.log(userSaid); // sample output: 'hello'
+  console.log(commandText); // sample output: 'hello (there)'
+  console.log(phrases); // sample output: ['hello', 'halo', 'yellow', 'polo', 'hello kitty']
+});
+            // Start listening. You can call this here, or attach this call to an event, button, etc.
+
+
+}
+*/
+    </script>
+<script src="../js/index.js"></script>
+</body>
 </html>

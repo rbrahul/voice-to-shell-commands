@@ -7,15 +7,10 @@ var bodyParser = require('body-parser');
 import mongoose from 'mongoose';
 var index = require('./routes/index');
 var users = require('./routes/users');
-var graphqlHTTP = require('express-graphql');
 
 import config from './src/config';
-mongoose.Promise = global.Promise;
-mongoose.connect(config.dbURL) 
 
 var app = express();
-
-import schema from './src/schema';
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -30,10 +25,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-app.use('/graphql', graphqlHTTP({
-  schema,
-  graphiql: true
-}));
 app.use('/users', users);
 
 // catch 404 and forward to error handler
